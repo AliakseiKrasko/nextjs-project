@@ -1,7 +1,8 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import Image from 'next/image';
 
 
 export default function Characters() {
@@ -24,6 +25,11 @@ export default function Characters() {
                 {characters && characters.map(character => (
                     <div key={character.id}>
                         <div>{character.name}</div>
+                        <Image src={character.image}
+                               alt={`Picture of ${character.name}`}
+                               width={300}
+                               height={300}
+                        />
                     </div>
                 ))}
             </main>
