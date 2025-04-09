@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import {HeadMeta} from '@/components/HeadMeta/HeadMeta';
 import React from 'react';
-import {Navbar} from '@/components/Navbar/Navbar';
 import {getLayout} from '@/components/Layout/Layout';
 
 
