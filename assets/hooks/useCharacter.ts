@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
-import {Nullable} from '@/assets/types';
-import {CharacterType} from '@/assets/hooks/useCharacters';
+import {Nullable} from 'assets/types';
+import {CharacterType} from 'assets/hooks/useCharacters';
 import {useRouter} from 'next/router';
 
 export const useCharacter = (): Nullable<CharacterType> => {
@@ -10,7 +10,7 @@ export const useCharacter = (): Nullable<CharacterType> => {
     const router = useRouter()
 
     useEffect(() => {
-        axios.get(`https://rickandmortyapi.com/api/character/${router.query.id}`)
+        axios.get(`${process.env.NEXT_PUBLIC_RICK_AND_MOPTY_API_URL}/character/${router.query.id}`)
             .then(res => setCharacter(res.data))
     }, []);
 
