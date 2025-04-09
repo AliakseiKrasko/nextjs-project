@@ -1,13 +1,21 @@
-// @flow 
 import * as React from 'react';
+import {PropsWithChildren, ReactElement} from 'react';
+import styles from '@/styles/Home.module.css';
+import {Navbar} from '@/components/Navbar/Navbar';
+import {NextPage} from 'next';
 
-type Props = {
-    
-};
-export const Layout = (props: Props) => {
+
+export const Layout: NextPage<PropsWithChildren> = (props) => {
+    const {children} = props
+
     return (
-        <div>
-
-        </div>
+        <main className={styles.main}>
+            <Navbar/>
+            {children}
+        </main>
     );
 };
+
+export const getLayout = (page: ReactElement) => {
+    return <Layout>{page}</Layout>
+}
