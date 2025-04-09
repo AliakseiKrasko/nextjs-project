@@ -1,9 +1,11 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
+import {Inter} from 'next/font/google';
 import React from 'react';
 import {useCharacters} from '@/assets/hooks/useCharacters';
-import {CharacterCard} from '@/components/CharacterCard/CharacterCard';
+import {CharacterCard} from '@/components/CharacterCard/CharacterCard'
 
+const inter = Inter({subsets: ['latin']})
 
 export default function Characters() {
     const characters = useCharacters()
@@ -16,7 +18,7 @@ export default function Characters() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className={styles.main}>
+            <main className={`${styles.main} ${inter.className}`}>
                 {characters && characters.map(character => (
                     <CharacterCard key={character.id} character={character}/>
                 ))}

@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  align-items: center;
+  row-gap: 6px;
+  padding-top: 6px;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #a552f6;
+  color: white;
+}
